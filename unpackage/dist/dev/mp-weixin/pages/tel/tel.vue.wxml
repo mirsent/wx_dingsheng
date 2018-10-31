@@ -1,0 +1,31 @@
+<template name="5e962eb4">
+  <view class="_view data-v-4527c232 container">
+    <view class="_view data-v-4527c232 top">
+      <image src="{{logo}}" class="_image data-v-4527c232 logo"></image>
+      <text class="_text data-v-4527c232 name fs-minor">{{contact}}</text>
+      <image src="{{wx}}" class="_image data-v-4527c232 code" bindtap="handleProxy" data-eventid="{{'QMp-0'}}" data-comkey="{{$k}}"></image>
+    </view>
+    <view class="_view data-v-4527c232 tel fs-head">
+      <view class="_view data-v-4527c232 tel-item">
+        <image src="../../static/image/icon_tel.png" class="_image data-v-4527c232"></image>
+      </view>
+      <view class="_view data-v-4527c232 tel-item">
+        <text class="_text data-v-4527c232">联系方式</text>
+        <text bindtap="handleProxy" data-eventid="{{'5my-1'}}" data-comkey="{{$k}}" class="_text data-v-4527c232">{{tel}}</text>
+      </view>
+      <view class="_view data-v-4527c232 tel-item">
+        <text class="_text data-v-4527c232">传真</text>
+        <text class="_text data-v-4527c232">{{fax}}</text>
+      </view>
+    </view>
+    <view class="_view data-v-4527c232 map">
+      <view class="_view data-v-4527c232 location fs-head"> {{location}} </view>
+      <view class="_view data-v-4527c232 img">
+        <image src="../../static/image/map.png" mode="widthFix" class="_image data-v-4527c232"></image>
+      </view>
+    </view>
+    <view class="_view data-v-4527c232 img-box" wx:if="{{isShow}}" bindtap="handleProxy" data-eventid="{{'jLi-2'}}" data-comkey="{{$k}}">
+      <image src="{{wx}}" class="_image data-v-4527c232"></image>
+    </view>
+  </view>
+</template>
