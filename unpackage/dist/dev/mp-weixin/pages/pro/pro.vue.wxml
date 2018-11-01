@@ -1,6 +1,6 @@
 <template name="724bc8d8">
   <view class="_view data-v-1dbc8dea container">
-    <scroll-view scroll-y bindscroll="handleProxy" style="height: 100vh;" data-eventid="{{'xTG-1'}}" data-comkey="{{$k}}" class="_scroll-view data-v-1dbc8dea">
+    <scroll-view scroll-y bindscroll="handleProxy" style="height: 100vh;" data-eventid="{{'h0S-1'}}" data-comkey="{{$k}}" class="_scroll-view data-v-1dbc8dea">
       <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="_swiper data-v-1dbc8dea">
         <swiper-item wx:key="item" key="{{item}}" wx:for="{{bannerList}}" wx:for-index="index" wx:for-item="item" class="_swiper-item data-v-1dbc8dea">
           <image src="{{item.banner_url}}" mode="scaleToFill" style="width: 100%;" class="_image data-v-1dbc8dea"></image>
@@ -12,7 +12,7 @@
           <text class="_text data-v-1dbc8dea fs-head">产品</text>
         </view>
         <view class="_view data-v-1dbc8dea right uni-flex">
-          <picker class="_picker data-v-1dbc8dea picker-item" mode="selector" value="{{typeIndex}}" range="{{typeList}}" bindchange="handleProxy" data-eventid="{{'6LP-0'}}" data-comkey="{{$k}}">
+          <picker class="_picker data-v-1dbc8dea picker-item" mode="selector" value="{{typeIndex}}" range="{{typeList}}" bindchange="handleProxy" data-eventid="{{'8Wk-0'}}" data-comkey="{{$k}}">
             <view class="_view data-v-1dbc8dea fs-head pciker-text">{{typeList[typeIndex]}}
               <image src="../../static/image/icon_list.png" class="_image data-v-1dbc8dea"></image>
             </view>

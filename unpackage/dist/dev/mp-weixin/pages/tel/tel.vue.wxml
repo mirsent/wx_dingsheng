@@ -3,7 +3,7 @@
     <view class="_view data-v-4527c232 top">
       <image src="{{logo}}" class="_image data-v-4527c232 logo"></image>
       <text class="_text data-v-4527c232 name fs-minor">{{contact}}</text>
-      <image src="{{wx}}" class="_image data-v-4527c232 code" bindtap="handleProxy" data-eventid="{{'QMp-0'}}" data-comkey="{{$k}}"></image>
+      <image src="{{wx}}" class="_image data-v-4527c232 code" bindtap="handleProxy" data-eventid="{{'0RG-0'}}" data-comkey="{{$k}}"></image>
     </view>
     <view class="_view data-v-4527c232 tel fs-head">
       <view class="_view data-v-4527c232 tel-item">
@@ -11,7 +11,7 @@
       </view>
       <view class="_view data-v-4527c232 tel-item">
         <text class="_text data-v-4527c232">联系方式</text>
-        <text bindtap="handleProxy" data-eventid="{{'5my-1'}}" data-comkey="{{$k}}" class="_text data-v-4527c232">{{tel}}</text>
+        <text bindtap="handleProxy" data-eventid="{{'8nr-1'}}" data-comkey="{{$k}}" class="_text data-v-4527c232">{{tel}}</text>
       </view>
       <view class="_view data-v-4527c232 tel-item">
         <text class="_text data-v-4527c232">传真</text>
@@ -24,7 +24,7 @@
         <image src="../../static/image/map.png" mode="widthFix" class="_image data-v-4527c232"></image>
       </view>
     </view>
-    <view class="_view data-v-4527c232 img-box" wx:if="{{isShow}}" bindtap="handleProxy" data-eventid="{{'jLi-2'}}" data-comkey="{{$k}}">
+    <view class="_view data-v-4527c232 img-box" wx:if="{{isShow}}" bindtap="handleProxy" data-eventid="{{'g1v-2'}}" data-comkey="{{$k}}">
       <image src="{{wx}}" class="_image data-v-4527c232"></image>
     </view>
   </view>

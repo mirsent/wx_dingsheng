@@ -1,1 +1,2 @@
-<import src="/components/uni-icon.vue.wxml" />
+<import src="/modules/mpvue-calendar/src/mpvue-calendar.vue.wxml" />
+<import src="/components/mpvue-calendar/src/mpvue-calendar.vue.wxml" />

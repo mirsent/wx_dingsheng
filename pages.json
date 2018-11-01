@@ -27,6 +27,12 @@
         {
             "path" : "pages/pro_detail/pro_detail",
             "style" : {}
+        },
+        {
+            "path" : "pages/order/order",
+            "style" : {
+                "navigationBarTitleText" : "订单制作"
+            }
         }
     ],
     "condition" : {
@@ -48,11 +54,16 @@
                 "name" : "bill",
                 "path" : "pages/bill/bill"
             },
-			{
-				"name" : "pro_detail",
-				"path" : "pages/pro_detail/pro_detail",
-				"query" : "proid=3"
-			}
+            {
+                "name" : "pro_detail",
+                "path" : "pages/pro_detail/pro_detail",
+                "query" : "proid=3"
+            },
+            {
+                "name" : "order",
+                "path" : "pages/order/order",
+                "query" : "proid=3"
+            }
         ]
     },
     "globalStyle" : {

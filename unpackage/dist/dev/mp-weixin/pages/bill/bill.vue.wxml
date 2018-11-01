@@ -3,7 +3,7 @@
     <view class="_view data-v-5e4785cf top">
       <image src="{{logo}}" class="_image data-v-5e4785cf logo"></image>
       <text class="_text data-v-5e4785cf name fs-minor">{{name}}</text>
-      <image src="{{wx}}" class="_image data-v-5e4785cf code" bindtap="handleProxy" data-eventid="{{'DsX-0'}}" data-comkey="{{$k}}"></image>
+      <image src="{{wx}}" class="_image data-v-5e4785cf code" bindtap="handleProxy" data-eventid="{{'1Yw-0'}}" data-comkey="{{$k}}"></image>
     </view>
     <view class="_view data-v-5e4785cf uni-list fs-head">
       <view class="_view data-v-5e4785cf uni-list-cell">
@@ -16,7 +16,7 @@
         </view>
       </view>
       <view class="_view data-v-5e4785cf uni-list-cell">
-        <view class="_view data-v-5e4785cf uni-list-cell-navigate" bindtap="handleProxy" data-eventid="{{'HvN-1'}}" data-comkey="{{$k}}"> 电话：{{tel}} </view>
+        <view class="_view data-v-5e4785cf uni-list-cell-navigate" bindtap="handleProxy" data-eventid="{{'K51-1'}}" data-comkey="{{$k}}"> 电话：{{tel}} </view>
       </view>
       <view class="_view data-v-5e4785cf uni-list-cell">
         <view class="_view data-v-5e4785cf uni-list-cell-navigate"> 开户行：{{bank}} </view>
@@ -28,7 +28,7 @@
         <view class="_view data-v-5e4785cf uni-list-cell-navigate"> 税号：{{tax}} </view>
       </view>
     </view>
-    <view class="_view data-v-5e4785cf img-box" wx:if="{{isShow}}" bindtap="handleProxy" data-eventid="{{'T6T-2'}}" data-comkey="{{$k}}">
+    <view class="_view data-v-5e4785cf img-box" wx:if="{{isShow}}" bindtap="handleProxy" data-eventid="{{'DHT-2'}}" data-comkey="{{$k}}">
       <image src="{{wx}}" class="_image data-v-5e4785cf"></image>
     </view>
   </view>
