@@ -2,12 +2,25 @@
 	<view>
         <uni-drawer :visible="rightDrawerVisible" mode="right" @close="closeRightDrawer">
         	<view class="drawer-content">
-        		<view class="title">抽屉式导航</view>
-        		<view class="btn-group">
-        			<button class="confirm" type="warn">确定</button>
-        			<button class="cancle" type="warn" @tap="closeRightDrawer">取消</button>
-        		</view>
-        		
+        		<view class="title">{{drawerTitle}}</view>
+                
+                <view v-if="drawerDemandVisible">
+                    <input type="text" placeholder="需方" @blur="addDemandChange"/>
+                    <input type="text" placeholder="需方电话"  @blur="addDemandTelChange"/>
+                    <input type="text" placeholder="需方地址"  @blur="addDemandLocationChange"/>
+                	<view class="btn-group">
+                		<button type="primary" size="mini" @tap="confirmDemand">确定</button>
+                		<button type="warn" size="mini" @tap="cancleDemand">取消</button>
+                	</view>
+                </view>
+                
+                <view v-if="drawerStandardVisible">
+                    <input type="text" placeholder="规格" @blur="addStandardChange"/>
+                	<view class="btn-group">
+                		<button type="primary" size="mini" @tap="confirmStandard">确定</button>
+                		<button type="warn" size="mini" @tap="cancleStandard">取消</button>
+                	</view>
+                </view>
         	</view>
         </uni-drawer>
         
@@ -19,8 +32,8 @@
 						<input type="text" :value="demand" placeholder="请输入需方" />
 					</view>
                     <!-- #ifdef MP-WEIXIN -->
-                    <view @tap="showRightDrawer">
-                    	<image src="../../static/image/select.png" class="icon" mode=""></image>
+                    <view @tap="addDemand">
+                    	<image src="../../static/image/add.png" class="icon" mode=""></image>
                     </view>
                     <!-- #endif -->
 					<picker class="picker-item" mode="selector" :range="demandList" @change="demandChange">
@@ -61,6 +74,11 @@
 						<text>规格</text>
 						<input type="text" :value="proStandard" placeholder="请输入规格" />
 					</view>
+                    <!-- #ifdef MP-WEIXIN -->
+                    <view @tap="addStandard">
+                    	<image src="../../static/image/add.png" class="icon" mode=""></image>
+                    </view>
+                    <!-- #endif -->
 					<picker class="picker-item" mode="selector" :range="standardList" @change="standardChange">
 						<image src="../../static/image/select.png" class="icon" mode=""></image>
 					</picker>
@@ -108,7 +126,7 @@
 				<view class="uni-list-cell-navigate">
 					<view class="input-group">
 						<text>单价</text>
-						<input type="number" value="" placeholder="请输入单价" @blur="unitPriceChange" />
+						<input type="digit" value="" placeholder="请输入单价" @blur="unitPriceChange" />
 					</view>
 				</view>
 			</view>
@@ -174,7 +192,10 @@
 		<view class="mask" v-show="previewShow">
 			<view class="preview">
 				<image :src="previewUrl" mode="widthFix"></image>
-				<button type="primary" class="btn-save" @tap="saveImg">保存</button>
+				<view>
+					<button type="default" size="mini" class="btn-save" @tap="saveImg">保存</button>
+					<button type="default" size="mini" @tap="cancleImg">取消</button>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -192,8 +213,18 @@
 		data() {
 			return {
                 rightDrawerVisible: false,
+                drawerTitle: '',
+                drawerDemandVisible: false,
+                drawerStandardVisible: false,
+                
+                aDemand: '',
+                aDemandTel: '',
+                aDemandLocation: '',
+                aStandard: '',
+                
 				previewShow: false,
 				previewUrl: '',
+                
 				demandList: [],
 				proList: [],
 				standardList: [],
@@ -219,6 +250,7 @@
 				proAmount: '',
 				proCapitalAmount: '',
 				proPackage: '',
+                
 				proContractExpS: '',
                 proContractSMax: '',
 				proContractExpE: '',
@@ -238,7 +270,7 @@
 				method: 'GET',
 				success: res => {
 					let info = res.data.data;
-					this.sFax = info.company.fax;
+					this.sFax = info.company.company_fax;
 					this.supply = info.bill.company_name;
 					this.sLocation = info.bill.location;
 					this.sTel = info.bill.tel;
@@ -518,11 +550,103 @@
 					fail: () => {}
 				});
 			},
-            closeRightDrawer() {
-            	this.rightDrawerVisible = false;
-            },
-            showRightDrawer() {
+            addDemand() {
+                this.drawerTitle = '添加需方信息';
+                this.drawerDemandVisible = true;
             	this.rightDrawerVisible = true;
+            },
+            addDemandChange(e) {
+                this.aDemand = e.detail.value;
+            },
+            addDemandTelChange(e) {
+                this.aDemandTel = e.detail.value;
+            },
+            addDemandLocationChange(e) {
+                this.aDemandLocation = e.detail.value;
+            },
+            confirmDemand() {
+                uni.showLoading();
+                uni.request({
+                	url: this.$requestUrl+'add_demand',
+                	method: 'POST',
+                    header: {
+                    	'content-type': 'application/x-www-form-urlencoded'
+                    },
+                	data: {
+                        name: this.aDemand,
+                        tel: this.aDemandTel,
+                        location: this.aDemandLocation
+                    },
+                	success: res => {
+                        this.demandList = res.data.data;
+                        uni.showToast({
+                        	title: '添加成功',
+                        	mask: false,
+                        	duration: 1500
+                        });
+                    },
+                	fail: () => {
+                        uni.showToast({
+                        	title: '请求出错，稍后重试',
+                        	mask: false,
+                        	duration: 1500
+                        });
+                    },
+                	complete: () => {
+                        this.drawerDemandVisible = false;
+                        this.rightDrawerVisible = false;
+                        uni.hideLoading();
+                    }
+                });
+            },
+            cancleDemand() {
+                this.drawerDemandVisible = false;
+                this.rightDrawerVisible = false;
+            },
+            addStandard() {
+                this.drawerTitle = '添加规格';
+                this.drawerStandardVisible = true;
+                this.rightDrawerVisible = true;
+            },
+            addStandardChange(e) {
+            	this.aStandard = e.detail.value;
+            },
+            confirmStandard() {
+                uni.showLoading();
+                uni.request({
+                	url: this.$requestUrl+'add_standard',
+                	method: 'POST',
+                	header: {
+                		'content-type': 'application/x-www-form-urlencoded'
+                	},
+                	data: {
+                		standard_name: this.aStandard,
+                	},
+                	success: res => {
+                		this.standardList = res.data.data;
+                		uni.showToast({
+                			title: '添加成功',
+                			mask: false,
+                			duration: 1500
+                		});
+                	},
+                	fail: () => {
+                		uni.showToast({
+                			title: '请求出错，稍后重试',
+                			mask: false,
+                			duration: 1500
+                		});
+                	},
+                	complete: () => {
+                        this.drawerStandardVisible = false;
+                		this.rightDrawerVisible = false;
+                		uni.hideLoading();
+                	}
+                });
+            },
+            cancleStandard() {
+            	this.drawerStandardVisible = false;
+            	this.rightDrawerVisible = false;
             },
 			saveImg() {
 				let _this = this;
@@ -539,6 +663,9 @@
 					}
 				});
 			},
+            cancleImg() {
+                this.previewShow = false;
+            },
 			demandChange(e) {
 				this.demand = this.demandList[e.detail.value];
 				uni.request({
@@ -648,7 +775,7 @@
 
 	.mask {
 		width: 100%;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		bottom: 0;
 		z-index: 999;
@@ -673,10 +800,30 @@
 
 	.btn-save{
 		margin-top: 30upx;
+        margin-right: 20upx;
 	}
     .btn-create{
         color: #FFF;
         background-color: #0C5182;
         border-radius: 0;
+    }
+    
+    .drawer-content{
+        padding: 20px;
+    }
+    .drawer-content .title{
+        margin-bottom: 30upx;
+    }
+    .drawer-content input{
+        border-bottom: 1px solid #0C5182;
+        margin-bottom: 5upx;
+    }
+    .btn-group{
+        display: flex;
+        margin-top: 30upx;
+    }
+    .btn-group button{
+        margin-left: 0;
+        margin-right: 30upx;
     }
 </style>

@@ -1,9 +1,9 @@
 <import src="/components/slots" />
-<template name="20704fd1">
-  <view class="_view data-v-98c6385c uni-drawer {{[visible ? 'uni-drawer-visible' : '', rightMode ? 'uni-drawer-right' : '']}}" catchtouchmove="{{catchtouchmove}}">
+<template name="1b6f33e6">
+  <view class="_view data-v-397c4292 uni-drawer {{[visible ? 'uni-drawer-visible' : '', rightMode ? 'uni-drawer-right' : '']}}" catchtouchmove="{{catchtouchmove}}">
     <template name="default"></template>
-    <view wx:if="{{showMask}}" class="_view data-v-98c6385c uni-drawer-mask" bindtap="handleProxy" data-eventid="{{'kj3-0'}}" data-comkey="{{$k}}"></view>
-    <view class="_view data-v-98c6385c uni-drawer-content">
+    <view wx:if="{{showMask}}" class="_view data-v-397c4292 uni-drawer-mask" bindtap="handleProxy" data-eventid="{{'2sy-0'}}" data-comkey="{{$k}}"></view>
+    <view class="_view data-v-397c4292 uni-drawer-content">
       <template data="{{...$root['0'], ...$root[$k], $root}}" is="{{$slotdefault || 'default'}}"></template>
     </view>
   </view>

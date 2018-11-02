@@ -1,35 +1,35 @@
-<template name="e0c2c17e">
-  <view class="_view data-v-be6bd1e2 container">
-    <view class="_view data-v-be6bd1e2 top">
-      <image src="{{logo}}" class="_image data-v-be6bd1e2 logo"></image>
-      <text class="_text data-v-be6bd1e2 name fs-minor">{{name}}</text>
-      <image src="{{wx}}" class="_image data-v-be6bd1e2 code" bindtap="handleProxy" data-eventid="{{'toS-0'}}" data-comkey="{{$k}}"></image>
+<template name="5c4b7716">
+  <view class="_view data-v-5e4785cf container">
+    <view class="_view data-v-5e4785cf top">
+      <image src="{{logo}}" class="_image data-v-5e4785cf logo"></image>
+      <text class="_text data-v-5e4785cf name fs-minor">{{name}}</text>
+      <image src="{{wx}}" class="_image data-v-5e4785cf code" bindtap="handleProxy" data-eventid="{{'1zB-0'}}" data-comkey="{{$k}}"></image>
     </view>
-    <view class="_view data-v-be6bd1e2 uni-list fs-head">
-      <view class="_view data-v-be6bd1e2 uni-list-cell">
-        <view class="_view data-v-be6bd1e2 uni-list-cell-navigate"> 公司名称：{{company}} </view>
+    <view class="_view data-v-5e4785cf uni-list fs-head">
+      <view class="_view data-v-5e4785cf uni-list-cell">
+        <view class="_view data-v-5e4785cf uni-list-cell-navigate"> 公司名称：{{company}} </view>
       </view>
-      <view class="_view data-v-be6bd1e2 uni-list-cell">
-        <view class="_view data-v-be6bd1e2 uni-list-cell-navigate location">
-          <text style="flex-shrink: 0;" class="_text data-v-be6bd1e2">地址：</text>
-          <text class="_text data-v-be6bd1e2">{{location}}</text>
+      <view class="_view data-v-5e4785cf uni-list-cell">
+        <view class="_view data-v-5e4785cf uni-list-cell-navigate location">
+          <text style="flex-shrink: 0;" class="_text data-v-5e4785cf">地址：</text>
+          <text class="_text data-v-5e4785cf">{{location}}</text>
         </view>
       </view>
-      <view class="_view data-v-be6bd1e2 uni-list-cell">
-        <view class="_view data-v-be6bd1e2 uni-list-cell-navigate" bindtap="handleProxy" data-eventid="{{'zjG-1'}}" data-comkey="{{$k}}"> 电话：{{tel}} </view>
+      <view class="_view data-v-5e4785cf uni-list-cell">
+        <view class="_view data-v-5e4785cf uni-list-cell-navigate" bindtap="handleProxy" data-eventid="{{'EOw-1'}}" data-comkey="{{$k}}"> 电话：{{tel}} </view>
       </view>
-      <view class="_view data-v-be6bd1e2 uni-list-cell">
-        <view class="_view data-v-be6bd1e2 uni-list-cell-navigate"> 开户行：{{bank}} </view>
+      <view class="_view data-v-5e4785cf uni-list-cell">
+        <view class="_view data-v-5e4785cf uni-list-cell-navigate"> 开户行：{{bank}} </view>
       </view>
-      <view class="_view data-v-be6bd1e2 uni-list-cell">
-        <view class="_view data-v-be6bd1e2 uni-list-cell-navigate"> 账号：{{account}} </view>
+      <view class="_view data-v-5e4785cf uni-list-cell">
+        <view class="_view data-v-5e4785cf uni-list-cell-navigate"> 账号：{{account}} </view>
       </view>
-      <view class="_view data-v-be6bd1e2 uni-list-cell">
-        <view class="_view data-v-be6bd1e2 uni-list-cell-navigate"> 税号：{{tax}} </view>
+      <view class="_view data-v-5e4785cf uni-list-cell">
+        <view class="_view data-v-5e4785cf uni-list-cell-navigate"> 税号：{{tax}} </view>
       </view>
     </view>
-    <view class="_view data-v-be6bd1e2 img-box" wx:if="{{isShow}}" bindtap="handleProxy" data-eventid="{{'SDS-2'}}" data-comkey="{{$k}}">
-      <image src="{{wx}}" class="_image data-v-be6bd1e2"></image>
+    <view class="_view data-v-5e4785cf img-box" wx:if="{{isShow}}" bindtap="handleProxy" data-eventid="{{'8m8-2'}}" data-comkey="{{$k}}">
+      <image src="{{wx}}" class="_image data-v-5e4785cf"></image>
     </view>
   </view>
 </template>

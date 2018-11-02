@@ -63,18 +63,11 @@
 		},
 		onLoad(e) {
 			uni.request({
-				url: this.$requestUrl+'get_pro_type',
+				url: this.$requestUrl+'get_pro_info',
 				method: 'GET',
 				success: res => {
-					this.typeList = res.data.data;
-				},
-				fail: () => {}
-			});
-			uni.request({
-				url: this.$requestUrl+'get_pro_banner',
-				method: 'GET',
-				success: res => {
-					this.bannerList = res.data.data;
+					this.typeList = res.data.data.type;
+                    this.bannerList = res.data.data.banner;
 				},
 				fail: () => {}
 			});

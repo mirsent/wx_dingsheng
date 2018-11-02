@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<view class="logo">
-			<image src="../../static/image/logo.png" mode="aspectFit"></image>
+			<image src="../../static/image/logo.png" mode="aspectFit" @tap="toOrder"></image>
 		</view>
 		<view class="info fs-part">
 			<text class="name fs-head">{{name}}</text>
@@ -20,7 +20,8 @@
 				nameEN: '',
 				location: '',
 				tel: '',
-				fax: ''
+				fax: '',
+                hasOrder: false
 			}
 		},
 		onLoad(e) {
@@ -41,6 +42,23 @@
 					uni.hideLoading();
 				}
 			});
+            uni.login({
+            	provider: 'weixin',
+            	success: res => {
+                    uni.request({
+                    	url: this.$requestUrl+'code_2_session',
+                    	method: 'GET',
+                    	data: {
+                            js_code: res.code
+                        },
+                    	success: res => {
+                            if (res.data.status == 1) {
+                            	this.hasOrder = true;
+                            }
+                        }
+                    });
+                }
+            });
 		},
 		onShareAppMessage() {
 			return {
@@ -53,7 +71,14 @@
 				uni.makePhoneCall({
 					phoneNumber: this.tel,
 				})
-			}
+			},
+            toOrder() {
+                if (this.hasOrder) {
+                	uni.navigateTo({
+                		url: '../order/order'
+                	});
+                }
+            }
 		}
 	}
 </script>

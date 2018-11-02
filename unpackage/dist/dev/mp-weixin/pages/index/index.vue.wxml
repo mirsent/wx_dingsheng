@@ -1,14 +1,14 @@
-<template name="6c87188d">
-  <view class="_view data-v-1bfe5e55 container">
-    <view class="_view data-v-1bfe5e55 logo">
-      <image src="../../static/image/logo.png" mode="aspectFit" class="_image data-v-1bfe5e55"></image>
+<template name="7d4561bc">
+  <view class="_view data-v-6fdb1d15 container">
+    <view class="_view data-v-6fdb1d15 logo">
+      <image src="../../static/image/logo.png" mode="aspectFit" bindtap="handleProxy" data-eventid="{{'Mkt-0'}}" data-comkey="{{$k}}" class="_image data-v-6fdb1d15"></image>
     </view>
-    <view class="_view data-v-1bfe5e55 info fs-part">
-      <text class="_text data-v-1bfe5e55 name fs-head">{{name}}</text>
-      <text class="_text data-v-1bfe5e55 name-en">{{nameEN}}</text>
-      <text class="_text data-v-1bfe5e55 location">{{location}}</text>
-      <view class="_view data-v-1bfe5e55 tel">电话:
-        <text bindtap="handleProxy" data-eventid="{{'VBd-0'}}" data-comkey="{{$k}}" class="_text data-v-1bfe5e55">{{tel}}</text> 传真: {{fax}}</view>
+    <view class="_view data-v-6fdb1d15 info fs-part">
+      <text class="_text data-v-6fdb1d15 name fs-head">{{name}}</text>
+      <text class="_text data-v-6fdb1d15 name-en">{{nameEN}}</text>
+      <text class="_text data-v-6fdb1d15 location">{{location}}</text>
+      <view class="_view data-v-6fdb1d15 tel">电话:
+        <text bindtap="handleProxy" data-eventid="{{'UCT-1'}}" data-comkey="{{$k}}" class="_text data-v-6fdb1d15">{{tel}}</text> 传真: {{fax}}</view>
     </view>
   </view>
 </template>
