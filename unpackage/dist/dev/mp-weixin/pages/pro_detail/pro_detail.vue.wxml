@@ -1,14 +1,14 @@
-<template name="328c8254">
-  <view class="_view data-v-7ddc0b62 container">
-    <view class="_view data-v-7ddc0b62 img">
-      <image src="{{product_url}}" mode="aspectFill" class="_image data-v-7ddc0b62"></image>
+<template name="3e92fe81">
+  <view class="_view data-v-2804ab8f container">
+    <view class="_view data-v-2804ab8f img">
+      <image src="{{product_url}}" mode="aspectFill" class="_image data-v-2804ab8f"></image>
     </view>
-    <view class="_view data-v-7ddc0b62 content">
-      <view class="_view data-v-7ddc0b62 name fs-head"> {{product_title}} </view>
-      <view class="_view data-v-7ddc0b62 type fs-part"> 产品类型: {{product_type_name}} </view>
-      <view class="_view data-v-7ddc0b62 detail">
-        <view class="_view data-v-7ddc0b62 title">商品详情</view>
-        <rich-text type="node" nodes="{{product_detail}}" class="_rich-text data-v-7ddc0b62"></rich-text>
+    <view class="_view data-v-2804ab8f content">
+      <view class="_view data-v-2804ab8f name fs-head"> {{product_title}} </view>
+      <view class="_view data-v-2804ab8f type fs-part"> 产品类型: {{product_type_name}} </view>
+      <view class="_view data-v-2804ab8f detail">
+        <view class="_view data-v-2804ab8f title">商品详情</view>
+        <rich-text type="node" nodes="{{product_detail}}" class="_rich-text data-v-2804ab8f"></rich-text>
       </view>
     </view>
   </view>

@@ -1,5 +1,16 @@
 <template>
 	<view>
+        <uni-drawer :visible="rightDrawerVisible" mode="right" @close="closeRightDrawer">
+        	<view class="drawer-content">
+        		<view class="title">抽屉式导航</view>
+        		<view class="btn-group">
+        			<button class="confirm" type="warn">确定</button>
+        			<button class="cancle" type="warn" @tap="closeRightDrawer">取消</button>
+        		</view>
+        		
+        	</view>
+        </uni-drawer>
+        
 		<view class="uni-list">
 			<view class="uni-list-cell">
 				<view class="uni-list-cell-navigate">
@@ -7,6 +18,11 @@
 						<text>需方</text>
 						<input type="text" :value="demand" placeholder="请输入需方" />
 					</view>
+                    <!-- #ifdef MP-WEIXIN -->
+                    <view @tap="showRightDrawer">
+                    	<image src="../../static/image/select.png" class="icon" mode=""></image>
+                    </view>
+                    <!-- #endif -->
 					<picker class="picker-item" mode="selector" :range="demandList" @change="demandChange">
 						<image src="../../static/image/select.png" class="icon" mode=""></image>
 					</picker>
@@ -101,12 +117,19 @@
 					<view class="input-group">
 						<text>合同有效期</text>
 					</view>
-					<picker class="picker-item picker-time" mode="date" @change="contractExpChange">
-						<view class="picker-box" style="display: flex;">
-							<input type="text" :value="proContractExp" placeholder="请选择日期" disabled />
-							<image src="../../static/image/select.png" class="icon" mode=""></image>
-						</view>
-					</picker>
+					<view class="picker-box">
+						<picker class="picker-item picker-time" mode="date" 
+                            :end="proContractSMax"
+                            @change="contractExpSChange">
+							<input type="text" :value="proContractExpS" placeholder="请选择日期" disabled />
+						</picker>
+						<text style="margin-right: 8px;">-</text>
+						<picker class="picker-item picker-time" mode="date" 
+                            :start="proContractEMin"
+                            @change="contractExpEChange">
+							<input type="text" :value="proContractExpE" placeholder="请选择日期" disabled />
+						</picker>
+					</view>
 				</view>
 			</view>
 			<view class="uni-list-cell">
@@ -114,12 +137,19 @@
 					<view class="input-group">
 						<text>价格有限期</text>
 					</view>
-					<picker class="picker-item picker-time" mode="date" @change="priceExpChange">
-						<view class="picker-box" style="display: flex;">
-							<input type="text" :value="proPriceExp" placeholder="请选择日期" disabled />
-							<image src="../../static/image/select.png" class="icon" mode=""></image>
-						</view>
-					</picker>
+                    <view class="picker-box">
+                    	<picker class="picker-item picker-time" mode="date" 
+                            :end="proPriceExpSMax"
+                            @change="priceExpSChange">
+                    		<input type="text" :value="proPriceExpS" placeholder="请选择日期" disabled />
+                    	</picker>
+                    	<text style="margin-right: 8px;">-</text>
+                    	<picker class="picker-item picker-time" mode="date" 
+                            :start="proPriceExpEMin"
+                            @change="priceExpEChange">
+                    		<input type="text" :value="proPriceExpE" placeholder="请选择日期" disabled />
+                    	</picker>
+                    </view>
 				</view>
 			</view>
 			<view class="uni-list-cell">
@@ -128,7 +158,7 @@
 						<text>合同日期</text>
 					</view>
 					<picker class="picker-item picker-time" mode="date" @change="dateChange">
-						<view class="picker-box" style="display: flex;">
+						<view class="picker-box">
 							<input type="text" :value="sDate" placeholder="请选择日期" disabled />
 							<image src="../../static/image/select.png" class="icon" mode=""></image>
 						</view>
@@ -138,7 +168,7 @@
 
 		</view>
 
-		<button type="primary" @tap="createTable">制作</button>
+		<button type="button" class="btn-create" @tap="createTable">制作</button>
 
 		<canvas class="canvas-element" canvas-id="canvas"></canvas>
 		<view class="mask" v-show="previewShow">
@@ -151,11 +181,17 @@
 </template>
 
 <script>
+    import uniDrawer from '../../components/uni-drawer.vue';
+    
 	let ctx = null;
 	let windowWidth = 800;
 	export default {
+        components: {
+        	uniDrawer
+        },
 		data() {
 			return {
+                rightDrawerVisible: false,
 				previewShow: false,
 				previewUrl: '',
 				demandList: [],
@@ -183,8 +219,14 @@
 				proAmount: '',
 				proCapitalAmount: '',
 				proPackage: '',
-				proContractExp: '2018年9月18日至2018年9月19日',
-				proPriceExp: '2018年9月18日至2018年9月19日',
+				proContractExpS: '',
+                proContractSMax: '',
+				proContractExpE: '',
+                proContractEMin: '',
+				proPriceExpS: '',
+                proPriceExpSMax: '',
+				proPriceExpE: '',
+                proPriceExpEMin: ''
 			};
 		},
 		onLoad: function() {
@@ -306,8 +348,8 @@
 
 						ctx.fillText('九、', padding, firstline + lineheight * 21)
 						ctx.fillText('有效期：', padding + space, firstline + lineheight * 21)
-						ctx.fillText('合同经双方盖章后生效，合同有效期：' + this.proContractExp + '; ', padding + space, firstline + lineheight * 22)
-						ctx.fillText('价格有效期：' + this.proPriceExp + '。', padding + space, firstline + lineheight * 23)
+						ctx.fillText('合同经双方盖章后生效，合同有效期：' + this.proContractExpS + '至' + this.proContractExpE + '; ', padding + space, firstline + lineheight * 22)
+						ctx.fillText('价格有效期：' + this.proPriceExpS + '至' + this.proPriceExpE + '。', padding + space, firstline + lineheight * 23)
 
 						ctx.fillText('十、', padding, firstline + lineheight * 24)
 						ctx.fillText('其他约定事项：', padding + space, firstline + lineheight * 24)
@@ -476,6 +518,12 @@
 					fail: () => {}
 				});
 			},
+            closeRightDrawer() {
+            	this.rightDrawerVisible = false;
+            },
+            showRightDrawer() {
+            	this.rightDrawerVisible = true;
+            },
 			saveImg() {
 				let _this = this;
 				uni.saveImageToPhotosAlbum({
@@ -534,8 +582,31 @@
 				let date = e.detail.value;
 				let dateArr = date.split('-');
 				this.sDate = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
-			}
-
+			},
+            contractExpSChange(e) {
+                let date = e.detail.value;
+                let dateArr = date.split('-');
+                this.proContractExpS = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
+                this.proContractEMin = date;
+            },
+            contractExpEChange(e) {
+                let date = e.detail.value;
+                let dateArr = date.split('-');
+                this.proContractExpE = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
+                this.proContractSMax = date;
+            },
+            priceExpSChange(e) {
+                let date = e.detail.value;
+                let dateArr = date.split('-');
+            	this.proPriceExpS = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
+            	this.proPriceExpEMin = date;
+            },
+            priceExpEChange(e) {
+                let date = e.detail.value;
+                let dateArr = date.split('-');
+            	this.proPriceExpE = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
+            	this.proPriceExpSMax = date;
+            }
 		}
 	}
 </script>
@@ -600,7 +671,12 @@
 		height: auto;
 	}
 
-	.btn-save {
+	.btn-save{
 		margin-top: 30upx;
 	}
+    .btn-create{
+        color: #FFF;
+        background-color: #0C5182;
+        border-radius: 0;
+    }
 </style>

@@ -74,3 +74,57 @@ page {
 .btn-save {
   margin-top: 30rpx;
 }
+.btn-create {
+  color: #FFF;
+  background-color: #0C5182;
+  border-radius: 0;
+}
+.uni-drawer.data-v-98c6385c {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: 99;
+}
+.uni-drawer>.uni-drawer-mask.data-v-98c6385c {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.uni-drawer>.uni-drawer-content.data-v-98c6385c {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 61.8%;
+  height: 100%;
+  background: #FFFFFF;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-transform: translatex(-100%);
+  transform: translatex(-100%);
+}
+.uni-drawer.uni-drawer-right>.uni-drawer-content.data-v-98c6385c {
+  left: auto;
+  right: 0;
+  -webkit-transform: translatex(100%);
+  transform: translatex(100%);
+}
+.uni-drawer.uni-drawer-visible.data-v-98c6385c {
+  visibility: visible;
+}
+.uni-drawer.uni-drawer-visible>.uni-drawer-mask.data-v-98c6385c {
+  display: block;
+}
+.uni-drawer.uni-drawer-visible>.uni-drawer-content.data-v-98c6385c {
+  -webkit-transform: translatex(0);
+  transform: translatex(0);
+}

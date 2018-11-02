@@ -1,147 +1,158 @@
-<template name="0130f9cc">
-  <view class="_view data-v-a4355de6">
-    <view class="_view data-v-a4355de6 uni-list">
-      <view class="_view data-v-a4355de6 uni-list-cell">
-        <view class="_view data-v-a4355de6 uni-list-cell-navigate">
-          <view class="_view data-v-a4355de6 input-group">
-            <text class="_text data-v-a4355de6">需方</text>
-            <input type="text" value="{{demand}}" placeholder="请输入需方" class="_input data-v-a4355de6" />
+<import src="/components/uni-drawer.vue.wxml" />
+<template name="aadd66f6">
+  <view class="_view data-v-5a08924d">
+    <template mode="right" bindclose="handleProxy" data-eventid="{{'w4W-1'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'HbC-0'],$root, $slotdefault:'data-v-5a08924d-default-HbC-0'}}" is="20704fd1"></template>
+    <view class="_view data-v-5a08924d uni-list">
+      <view class="_view data-v-5a08924d uni-list-cell">
+        <view class="_view data-v-5a08924d uni-list-cell-navigate">
+          <view class="_view data-v-5a08924d input-group">
+            <text class="_text data-v-5a08924d">需方</text>
+            <input type="text" value="{{demand}}" placeholder="请输入需方" class="_input data-v-5a08924d" />
           </view>
-          <picker class="_picker data-v-a4355de6 picker-item" mode="selector" range="{{demandList}}" bindchange="handleProxy" data-eventid="{{'LKm-0'}}" data-comkey="{{$k}}">
-            <image src="../../static/image/select.png" class="_image data-v-a4355de6 icon" mode></image>
+          <view bindtap="handleProxy" data-eventid="{{'JDH-2'}}" data-comkey="{{$k}}" class="_view data-v-5a08924d">
+            <image src="../../static/image/select.png" class="_image data-v-5a08924d icon" mode></image>
+          </view>
+          <picker class="_picker data-v-5a08924d picker-item" mode="selector" range="{{demandList}}" bindchange="handleProxy" data-eventid="{{'PMn-3'}}" data-comkey="{{$k}}">
+            <image src="../../static/image/select.png" class="_image data-v-5a08924d icon" mode></image>
           </picker>
         </view>
       </view>
-      <view class="_view data-v-a4355de6 uni-list-cell">
-        <view class="_view data-v-a4355de6 uni-list-cell-navigate">
-          <view class="_view data-v-a4355de6 input-group">
-            <text class="_text data-v-a4355de6">需方电话</text>
-            <input type="text" value="{{dTel}}" placeholder="请输入需方电话" class="_input data-v-a4355de6" />
+      <view class="_view data-v-5a08924d uni-list-cell">
+        <view class="_view data-v-5a08924d uni-list-cell-navigate">
+          <view class="_view data-v-5a08924d input-group">
+            <text class="_text data-v-5a08924d">需方电话</text>
+            <input type="text" value="{{dTel}}" placeholder="请输入需方电话" class="_input data-v-5a08924d" />
           </view>
         </view>
       </view>
-      <view class="_view data-v-a4355de6 uni-list-cell">
-        <view class="_view data-v-a4355de6 uni-list-cell-navigate">
-          <view class="_view data-v-a4355de6 input-group">
-            <text class="_text data-v-a4355de6">需方地址</text>
-            <input type="text" value="{{dLocation}}" placeholder="请输入需方地址" class="_input data-v-a4355de6" />
+      <view class="_view data-v-5a08924d uni-list-cell">
+        <view class="_view data-v-5a08924d uni-list-cell-navigate">
+          <view class="_view data-v-5a08924d input-group">
+            <text class="_text data-v-5a08924d">需方地址</text>
+            <input type="text" value="{{dLocation}}" placeholder="请输入需方地址" class="_input data-v-5a08924d" />
           </view>
         </view>
       </view>
-      <view class="_view data-v-a4355de6 uni-list-cell">
-        <view class="_view data-v-a4355de6 uni-list-cell-navigate">
-          <view class="_view data-v-a4355de6 input-group">
-            <text class="_text data-v-a4355de6">产品名称</text>
-            <input type="text" value="{{proName}}" placeholder="请输入产品名称" class="_input data-v-a4355de6" />
+      <view class="_view data-v-5a08924d uni-list-cell">
+        <view class="_view data-v-5a08924d uni-list-cell-navigate">
+          <view class="_view data-v-5a08924d input-group">
+            <text class="_text data-v-5a08924d">产品名称</text>
+            <input type="text" value="{{proName}}" placeholder="请输入产品名称" class="_input data-v-5a08924d" />
           </view>
-          <picker class="_picker data-v-a4355de6 picker-item" mode="selector" range="{{proList}}" bindchange="handleProxy" data-eventid="{{'w2I-1'}}" data-comkey="{{$k}}">
-            <image src="../../static/image/select.png" class="_image data-v-a4355de6 icon" mode></image>
+          <picker class="_picker data-v-5a08924d picker-item" mode="selector" range="{{proList}}" bindchange="handleProxy" data-eventid="{{'XlO-4'}}" data-comkey="{{$k}}">
+            <image src="../../static/image/select.png" class="_image data-v-5a08924d icon" mode></image>
           </picker>
         </view>
       </view>
-      <view class="_view data-v-a4355de6 uni-list-cell">
-        <view class="_view data-v-a4355de6 uni-list-cell-navigate">
-          <view class="_view data-v-a4355de6 input-group">
-            <text class="_text data-v-a4355de6">规格</text>
-            <input type="text" value="{{proStandard}}" placeholder="请输入规格" class="_input data-v-a4355de6" />
+      <view class="_view data-v-5a08924d uni-list-cell">
+        <view class="_view data-v-5a08924d uni-list-cell-navigate">
+          <view class="_view data-v-5a08924d input-group">
+            <text class="_text data-v-5a08924d">规格</text>
+            <input type="text" value="{{proStandard}}" placeholder="请输入规格" class="_input data-v-5a08924d" />
           </view>
-          <picker class="_picker data-v-a4355de6 picker-item" mode="selector" range="{{standardList}}" bindchange="handleProxy" data-eventid="{{'R0P-2'}}" data-comkey="{{$k}}">
-            <image src="../../static/image/select.png" class="_image data-v-a4355de6 icon" mode></image>
+          <picker class="_picker data-v-5a08924d picker-item" mode="selector" range="{{standardList}}" bindchange="handleProxy" data-eventid="{{'dtx-5'}}" data-comkey="{{$k}}">
+            <image src="../../static/image/select.png" class="_image data-v-5a08924d icon" mode></image>
           </picker>
         </view>
       </view>
-      <view class="_view data-v-a4355de6 uni-list-cell">
-        <view class="_view data-v-a4355de6 uni-list-cell-navigate">
-          <view class="_view data-v-a4355de6 input-group">
-            <text class="_text data-v-a4355de6">产地</text>
-            <input type="text" value="{{proOrigin}}" placeholder="请输入产地" class="_input data-v-a4355de6" />
+      <view class="_view data-v-5a08924d uni-list-cell">
+        <view class="_view data-v-5a08924d uni-list-cell-navigate">
+          <view class="_view data-v-5a08924d input-group">
+            <text class="_text data-v-5a08924d">产地</text>
+            <input type="text" value="{{proOrigin}}" placeholder="请输入产地" class="_input data-v-5a08924d" />
           </view>
-          <picker class="_picker data-v-a4355de6 picker-item" mode="selector" range="{{originList}}" bindchange="handleProxy" data-eventid="{{'Gqg-3'}}" data-comkey="{{$k}}">
-            <image src="../../static/image/select.png" class="_image data-v-a4355de6 icon" mode></image>
+          <picker class="_picker data-v-5a08924d picker-item" mode="selector" range="{{originList}}" bindchange="handleProxy" data-eventid="{{'nCb-6'}}" data-comkey="{{$k}}">
+            <image src="../../static/image/select.png" class="_image data-v-5a08924d icon" mode></image>
           </picker>
         </view>
       </view>
-      <view class="_view data-v-a4355de6 uni-list-cell">
-        <view class="_view data-v-a4355de6 uni-list-cell-navigate">
-          <view class="_view data-v-a4355de6 input-group">
-            <text class="_text data-v-a4355de6">单位</text>
-            <input type="text" value="{{proUnit}}" placeholder="请输入单位" class="_input data-v-a4355de6" />
+      <view class="_view data-v-5a08924d uni-list-cell">
+        <view class="_view data-v-5a08924d uni-list-cell-navigate">
+          <view class="_view data-v-5a08924d input-group">
+            <text class="_text data-v-5a08924d">单位</text>
+            <input type="text" value="{{proUnit}}" placeholder="请输入单位" class="_input data-v-5a08924d" />
           </view>
-          <picker class="_picker data-v-a4355de6 picker-item" mode="selector" range="{{unitList}}" bindchange="handleProxy" data-eventid="{{'VP3-4'}}" data-comkey="{{$k}}">
-            <image src="../../static/image/select.png" class="_image data-v-a4355de6 icon" mode></image>
+          <picker class="_picker data-v-5a08924d picker-item" mode="selector" range="{{unitList}}" bindchange="handleProxy" data-eventid="{{'lg0-7'}}" data-comkey="{{$k}}">
+            <image src="../../static/image/select.png" class="_image data-v-5a08924d icon" mode></image>
           </picker>
         </view>
       </view>
-      <view class="_view data-v-a4355de6 uni-list-cell">
-        <view class="_view data-v-a4355de6 uni-list-cell-navigate">
-          <view class="_view data-v-a4355de6 input-group">
-            <text class="_text data-v-a4355de6">包装</text>
-            <input type="text" value="" placeholder="请输入包装" bindblur="handleProxy" data-eventid="{{'r18-5'}}" data-comkey="{{$k}}" class="_input data-v-a4355de6" />
+      <view class="_view data-v-5a08924d uni-list-cell">
+        <view class="_view data-v-5a08924d uni-list-cell-navigate">
+          <view class="_view data-v-5a08924d input-group">
+            <text class="_text data-v-5a08924d">包装</text>
+            <input type="text" value="" placeholder="请输入包装" bindblur="handleProxy" data-eventid="{{'0it-8'}}" data-comkey="{{$k}}" class="_input data-v-5a08924d" />
           </view>
         </view>
       </view>
-      <view class="_view data-v-a4355de6 uni-list-cell">
-        <view class="_view data-v-a4355de6 uni-list-cell-navigate">
-          <view class="_view data-v-a4355de6 input-group">
-            <text class="_text data-v-a4355de6">数量</text>
-            <input type="number" value="" placeholder="请输入数量" bindblur="handleProxy" data-eventid="{{'rvB-6'}}" data-comkey="{{$k}}" class="_input data-v-a4355de6" />
+      <view class="_view data-v-5a08924d uni-list-cell">
+        <view class="_view data-v-5a08924d uni-list-cell-navigate">
+          <view class="_view data-v-5a08924d input-group">
+            <text class="_text data-v-5a08924d">数量</text>
+            <input type="number" value="" placeholder="请输入数量" bindblur="handleProxy" data-eventid="{{'bvc-9'}}" data-comkey="{{$k}}" class="_input data-v-5a08924d" />
           </view>
         </view>
       </view>
-      <view class="_view data-v-a4355de6 uni-list-cell">
-        <view class="_view data-v-a4355de6 uni-list-cell-navigate">
-          <view class="_view data-v-a4355de6 input-group">
-            <text class="_text data-v-a4355de6">单价</text>
-            <input type="number" value="" placeholder="请输入单价" bindblur="handleProxy" data-eventid="{{'7xC-7'}}" data-comkey="{{$k}}" class="_input data-v-a4355de6" />
+      <view class="_view data-v-5a08924d uni-list-cell">
+        <view class="_view data-v-5a08924d uni-list-cell-navigate">
+          <view class="_view data-v-5a08924d input-group">
+            <text class="_text data-v-5a08924d">单价</text>
+            <input type="number" value="" placeholder="请输入单价" bindblur="handleProxy" data-eventid="{{'rJ4-10'}}" data-comkey="{{$k}}" class="_input data-v-5a08924d" />
           </view>
         </view>
       </view>
-      <view class="_view data-v-a4355de6 uni-list-cell">
-        <view class="_view data-v-a4355de6 uni-list-cell-navigate">
-          <view class="_view data-v-a4355de6 input-group">
-            <text class="_text data-v-a4355de6">合同有效期</text>
+      <view class="_view data-v-5a08924d uni-list-cell">
+        <view class="_view data-v-5a08924d uni-list-cell-navigate">
+          <view class="_view data-v-5a08924d input-group">
+            <text class="_text data-v-5a08924d">合同有效期</text>
           </view>
-          <picker class="_picker data-v-a4355de6 picker-item picker-time" mode="date" bindchange="handleProxy" data-eventid="{{'qCL-8'}}" data-comkey="{{$k}}">
-            <view class="_view data-v-a4355de6 picker-box" style="display: flex;">
-              <input type="text" value="{{proContractExp}}" placeholder="请选择日期" disabled class="_input data-v-a4355de6" />
-              <image src="../../static/image/select.png" class="_image data-v-a4355de6 icon" mode></image>
-            </view>
-          </picker>
+          <view class="_view data-v-5a08924d picker-box">
+            <picker class="_picker data-v-5a08924d picker-item picker-time" mode="date" end="{{proContractSMax}}" bindchange="handleProxy" data-eventid="{{'DNn-11'}}" data-comkey="{{$k}}">
+              <input type="text" value="{{proContractExpS}}" placeholder="请选择日期" disabled class="_input data-v-5a08924d" />
+            </picker>
+            <text style="margin-right: 8px;" class="_text data-v-5a08924d">-</text>
+            <picker class="_picker data-v-5a08924d picker-item picker-time" mode="date" start="{{proContractEMin}}" bindchange="handleProxy" data-eventid="{{'fcV-12'}}" data-comkey="{{$k}}">
+              <input type="text" value="{{proContractExpE}}" placeholder="请选择日期" disabled class="_input data-v-5a08924d" />
+            </picker>
+          </view>
         </view>
       </view>
-      <view class="_view data-v-a4355de6 uni-list-cell">
-        <view class="_view data-v-a4355de6 uni-list-cell-navigate">
-          <view class="_view data-v-a4355de6 input-group">
-            <text class="_text data-v-a4355de6">价格有限期</text>
+      <view class="_view data-v-5a08924d uni-list-cell">
+        <view class="_view data-v-5a08924d uni-list-cell-navigate">
+          <view class="_view data-v-5a08924d input-group">
+            <text class="_text data-v-5a08924d">价格有限期</text>
           </view>
-          <picker class="_picker data-v-a4355de6 picker-item picker-time" mode="date" bindchange="handleProxy" data-eventid="{{'vcw-9'}}" data-comkey="{{$k}}">
-            <view class="_view data-v-a4355de6 picker-box" style="display: flex;">
-              <input type="text" value="{{proPriceExp}}" placeholder="请选择日期" disabled class="_input data-v-a4355de6" />
-              <image src="../../static/image/select.png" class="_image data-v-a4355de6 icon" mode></image>
-            </view>
-          </picker>
+          <view class="_view data-v-5a08924d picker-box">
+            <picker class="_picker data-v-5a08924d picker-item picker-time" mode="date" end="{{proPriceExpSMax}}" bindchange="handleProxy" data-eventid="{{'IST-13'}}" data-comkey="{{$k}}">
+              <input type="text" value="{{proPriceExpS}}" placeholder="请选择日期" disabled class="_input data-v-5a08924d" />
+            </picker>
+            <text style="margin-right: 8px;" class="_text data-v-5a08924d">-</text>
+            <picker class="_picker data-v-5a08924d picker-item picker-time" mode="date" start="{{proPriceExpEMin}}" bindchange="handleProxy" data-eventid="{{'lrk-14'}}" data-comkey="{{$k}}">
+              <input type="text" value="{{proPriceExpE}}" placeholder="请选择日期" disabled class="_input data-v-5a08924d" />
+            </picker>
+          </view>
         </view>
       </view>
-      <view class="_view data-v-a4355de6 uni-list-cell">
-        <view class="_view data-v-a4355de6 uni-list-cell-navigate">
-          <view class="_view data-v-a4355de6 input-group">
-            <text class="_text data-v-a4355de6">合同日期</text>
+      <view class="_view data-v-5a08924d uni-list-cell">
+        <view class="_view data-v-5a08924d uni-list-cell-navigate">
+          <view class="_view data-v-5a08924d input-group">
+            <text class="_text data-v-5a08924d">合同日期</text>
           </view>
-          <picker class="_picker data-v-a4355de6 picker-item picker-time" mode="date" bindchange="handleProxy" data-eventid="{{'jAE-10'}}" data-comkey="{{$k}}">
-            <view class="_view data-v-a4355de6 picker-box" style="display: flex;">
-              <input type="text" value="{{sDate}}" placeholder="请选择日期" disabled class="_input data-v-a4355de6" />
-              <image src="../../static/image/select.png" class="_image data-v-a4355de6 icon" mode></image>
+          <picker class="_picker data-v-5a08924d picker-item picker-time" mode="date" bindchange="handleProxy" data-eventid="{{'nPY-15'}}" data-comkey="{{$k}}">
+            <view class="_view data-v-5a08924d picker-box">
+              <input type="text" value="{{sDate}}" placeholder="请选择日期" disabled class="_input data-v-5a08924d" />
+              <image src="../../static/image/select.png" class="_image data-v-5a08924d icon" mode></image>
             </view>
           </picker>
         </view>
       </view>
     </view>
-    <button type="primary" bindtap="handleProxy" data-eventid="{{'WnW-11'}}" data-comkey="{{$k}}" class="_button data-v-a4355de6">制作</button>
-    <canvas class="_canvas data-v-a4355de6 canvas-element" canvas-id="canvas"></canvas>
-    <view class="_view data-v-a4355de6 mask" hidden="{{!(previewShow)}}">
-      <view class="_view data-v-a4355de6 preview">
-        <image src="{{previewUrl}}" mode="widthFix" class="_image data-v-a4355de6"></image>
-        <button type="primary" class="_button data-v-a4355de6 btn-save" bindtap="handleProxy" data-eventid="{{'ZhQ-12'}}" data-comkey="{{$k}}">保存</button>
+    <button type="button" class="_button data-v-5a08924d btn-create" bindtap="handleProxy" data-eventid="{{'5Uk-16'}}" data-comkey="{{$k}}">制作</button>
+    <canvas class="_canvas data-v-5a08924d canvas-element" canvas-id="canvas"></canvas>
+    <view class="_view data-v-5a08924d mask" hidden="{{!(previewShow)}}">
+      <view class="_view data-v-5a08924d preview">
+        <image src="{{previewUrl}}" mode="widthFix" class="_image data-v-5a08924d"></image>
+        <button type="primary" class="_button data-v-5a08924d btn-save" bindtap="handleProxy" data-eventid="{{'23G-17'}}" data-comkey="{{$k}}">保存</button>
       </view>
     </view>
   </view>
