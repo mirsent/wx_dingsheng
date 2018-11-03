@@ -1,29 +1,29 @@
 <template>
 	<view>
-        <uni-drawer :visible="rightDrawerVisible" mode="right" @close="closeRightDrawer">
-        	<view class="drawer-content">
-        		<view class="title">{{drawerTitle}}</view>
-                
-                <view v-if="drawerDemandVisible">
-                    <input type="text" placeholder="需方" @blur="addDemandChange"/>
-                    <input type="text" placeholder="需方电话"  @blur="addDemandTelChange"/>
-                    <input type="text" placeholder="需方地址"  @blur="addDemandLocationChange"/>
-                	<view class="btn-group">
-                		<button type="primary" size="mini" @tap="confirmDemand">确定</button>
-                		<button type="warn" size="mini" @tap="cancleDemand">取消</button>
-                	</view>
-                </view>
-                
-                <view v-if="drawerStandardVisible">
-                    <input type="text" placeholder="规格" @blur="addStandardChange"/>
-                	<view class="btn-group">
-                		<button type="primary" size="mini" @tap="confirmStandard">确定</button>
-                		<button type="warn" size="mini" @tap="cancleStandard">取消</button>
-                	</view>
-                </view>
-        	</view>
-        </uni-drawer>
-        
+		<uni-drawer :visible="rightDrawerVisible" mode="right" @close="closeRightDrawer">
+			<view class="drawer-content">
+				<view class="title">{{drawerTitle}}</view>
+
+				<view v-if="drawerDemandVisible">
+					<input type="text" placeholder="需方" @blur="addDemandChange" />
+					<input type="text" placeholder="需方电话" @blur="addDemandTelChange" />
+					<input type="text" placeholder="需方地址" @blur="addDemandLocationChange" />
+					<view class="btn-group">
+						<button type="primary" size="mini" @tap="confirmDemand">确定</button>
+						<button type="warn" size="mini" @tap="cancleDemand">取消</button>
+					</view>
+				</view>
+
+				<view v-if="drawerStandardVisible">
+					<input type="text" placeholder="规格" @blur="addStandardChange" />
+					<view class="btn-group">
+						<button type="primary" size="mini" @tap="confirmStandard">确定</button>
+						<button type="warn" size="mini" @tap="cancleStandard">取消</button>
+					</view>
+				</view>
+			</view>
+		</uni-drawer>
+
 		<view class="uni-list">
 			<view class="uni-list-cell">
 				<view class="uni-list-cell-navigate">
@@ -31,11 +31,11 @@
 						<text>需方</text>
 						<input type="text" :value="demand" placeholder="请输入需方" />
 					</view>
-                    <!-- #ifdef MP-WEIXIN -->
-                    <view @tap="addDemand">
-                    	<image src="../../static/image/add.png" class="icon" mode=""></image>
-                    </view>
-                    <!-- #endif -->
+					<!-- #ifdef MP-WEIXIN -->
+					<view @tap="addDemand">
+						<image src="../../static/image/add.png" class="icon" mode=""></image>
+					</view>
+					<!-- #endif -->
 					<picker class="picker-item" mode="selector" :range="demandList" @change="demandChange">
 						<image src="../../static/image/select.png" class="icon" mode=""></image>
 					</picker>
@@ -74,11 +74,11 @@
 						<text>规格</text>
 						<input type="text" :value="proStandard" placeholder="请输入规格" />
 					</view>
-                    <!-- #ifdef MP-WEIXIN -->
-                    <view @tap="addStandard">
-                    	<image src="../../static/image/add.png" class="icon" mode=""></image>
-                    </view>
-                    <!-- #endif -->
+					<!-- #ifdef MP-WEIXIN -->
+					<view @tap="addStandard">
+						<image src="../../static/image/add.png" class="icon" mode=""></image>
+					</view>
+					<!-- #endif -->
 					<picker class="picker-item" mode="selector" :range="standardList" @change="standardChange">
 						<image src="../../static/image/select.png" class="icon" mode=""></image>
 					</picker>
@@ -136,15 +136,11 @@
 						<text>合同有效期</text>
 					</view>
 					<view class="picker-box">
-						<picker class="picker-item picker-time" mode="date" 
-                            :end="proContractSMax"
-                            @change="contractExpSChange">
+						<picker class="picker-item picker-time" mode="date" :end="proContractSMax" @change="contractExpSChange">
 							<input type="text" :value="proContractExpS" placeholder="请选择日期" disabled />
 						</picker>
 						<text style="margin-right: 8px;">-</text>
-						<picker class="picker-item picker-time" mode="date" 
-                            :start="proContractEMin"
-                            @change="contractExpEChange">
+						<picker class="picker-item picker-time" mode="date" :start="proContractEMin" @change="contractExpEChange">
 							<input type="text" :value="proContractExpE" placeholder="请选择日期" disabled />
 						</picker>
 					</view>
@@ -155,19 +151,15 @@
 					<view class="input-group">
 						<text>价格有限期</text>
 					</view>
-                    <view class="picker-box">
-                    	<picker class="picker-item picker-time" mode="date" 
-                            :end="proPriceExpSMax"
-                            @change="priceExpSChange">
-                    		<input type="text" :value="proPriceExpS" placeholder="请选择日期" disabled />
-                    	</picker>
-                    	<text style="margin-right: 8px;">-</text>
-                    	<picker class="picker-item picker-time" mode="date" 
-                            :start="proPriceExpEMin"
-                            @change="priceExpEChange">
-                    		<input type="text" :value="proPriceExpE" placeholder="请选择日期" disabled />
-                    	</picker>
-                    </view>
+					<view class="picker-box">
+						<picker class="picker-item picker-time" mode="date" :end="proPriceExpSMax" @change="priceExpSChange">
+							<input type="text" :value="proPriceExpS" placeholder="请选择日期" disabled />
+						</picker>
+						<text style="margin-right: 8px;">-</text>
+						<picker class="picker-item picker-time" mode="date" :start="proPriceExpEMin" @change="priceExpEChange">
+							<input type="text" :value="proPriceExpE" placeholder="请选择日期" disabled />
+						</picker>
+					</view>
 				</view>
 			</view>
 			<view class="uni-list-cell">
@@ -202,29 +194,29 @@
 </template>
 
 <script>
-    import uniDrawer from '../../components/uni-drawer.vue';
-    
-	let ctx = null;
+	import uniDrawer from '../../components/uni-drawer.vue';
+
 	let windowWidth = 800;
+    let windowHeight = 1130;
 	export default {
-        components: {
-        	uniDrawer
-        },
+		components: {
+			uniDrawer
+		},
 		data() {
 			return {
-                rightDrawerVisible: false,
-                drawerTitle: '',
-                drawerDemandVisible: false,
-                drawerStandardVisible: false,
-                
-                aDemand: '',
-                aDemandTel: '',
-                aDemandLocation: '',
-                aStandard: '',
-                
+				rightDrawerVisible: false,
+				drawerTitle: '',
+				drawerDemandVisible: false,
+				drawerStandardVisible: false,
+
+				aDemand: '',
+				aDemandTel: '',
+				aDemandLocation: '',
+				aStandard: '',
+
 				previewShow: false,
 				previewUrl: '',
-                
+
 				demandList: [],
 				proList: [],
 				standardList: [],
@@ -250,21 +242,20 @@
 				proAmount: '',
 				proCapitalAmount: '',
 				proPackage: '',
-                
+
 				proContractExpS: '',
-                proContractSMax: '',
+				proContractSMax: '',
 				proContractExpE: '',
-                proContractEMin: '',
+				proContractEMin: '',
 				proPriceExpS: '',
-                proPriceExpSMax: '',
+				proPriceExpSMax: '',
 				proPriceExpE: '',
-                proPriceExpEMin: ''
+				proPriceExpEMin: ''
 			};
 		},
 		onLoad: function() {
 			uni.showLoading();
-			ctx = uni.createCanvasContext('canvas')
-            // get base info
+			// get base info
 			uni.request({
 				url: this.$requestUrl + 'get_order_info',
 				method: 'GET',
@@ -293,28 +284,27 @@
 			createTable: function() {
 				uni.showLoading();
 				let _this = this;
-
+                let ctx = uni.createCanvasContext('canvas')
 				uni.request({
 					url: _this.$requestUrl + 'convertUp',
 					method: 'POST',
-                    header: {
-                        'content-type': 'application/x-www-form-urlencoded'
-                    },
+					header: {
+						'content-type': 'application/x-www-form-urlencoded'
+					},
 					data: {
-                        demand: _this.demand,
-                        tel: _this.dTel,
-                        location: _this.dLocation,
-                        product: _this.proName,
-                        standard: _this.proStandard,
-                        origin: _this.proOrigin,
-                        unit: _this.proUnit,
-                        package: _this.proPackage,
+						demand: _this.demand,
+						tel: _this.dTel,
+						location: _this.dLocation,
+						product: _this.proName,
+						standard: _this.proStandard,
+						origin: _this.proOrigin,
+						unit: _this.proUnit,
+						package: _this.proPackage,
 						number: _this.proNumber,
-                        unit_price: _this.proUnitPrice
+						unit_price: _this.proUnitPrice
 					},
 					success: res => {
-						uni.hideLoading();
-                        let info = res.data.data;
+						let info = res.data.data;
 						_this.proAmount = info.amount;
 						_this.proCapitalAmount = info.capital_amount;
 
@@ -328,8 +318,11 @@
 						let tableAvg = (windowWidth - padding * 2 - table1 - table2) / 5;
 						let footerRight = windowWidth / 2 + 100;
 
-						ctx.setStrokeStyle('#ff0000')
-
+                        ctx.setFillStyle('white')
+                        ctx.fillRect(0, 0, windowWidth, windowHeight)
+                        
+						ctx.setStrokeStyle('black')
+                        ctx.setFillStyle('black')
 						ctx.setFontSize(20)
 						ctx.setTextAlign('center')
 						ctx.fillText('购销合同', windowWidth / 2, 50)
@@ -380,8 +373,10 @@
 
 						ctx.fillText('九、', padding, firstline + lineheight * 21)
 						ctx.fillText('有效期：', padding + space, firstline + lineheight * 21)
-						ctx.fillText('合同经双方盖章后生效，合同有效期：' + this.proContractExpS + '至' + this.proContractExpE + '; ', padding + space, firstline + lineheight * 22)
-						ctx.fillText('价格有效期：' + this.proPriceExpS + '至' + this.proPriceExpE + '。', padding + space, firstline + lineheight * 23)
+						ctx.fillText('合同经双方盖章后生效，合同有效期：' + this.proContractExpS + '至' + this.proContractExpE + '; ', padding + space,
+							firstline + lineheight * 22)
+						ctx.fillText('价格有效期：' + this.proPriceExpS + '至' + this.proPriceExpE + '。', padding + space, firstline +
+							lineheight * 23)
 
 						ctx.fillText('十、', padding, firstline + lineheight * 24)
 						ctx.fillText('其他约定事项：', padding + space, firstline + lineheight * 24)
@@ -407,12 +402,12 @@
 
 
 						// date underline
-						ctx.moveTo(342, firstline + lineheight * 22 + 5)
-						ctx.lineTo(585, firstline + lineheight * 22 + 5)
+						ctx.moveTo(342, firstline + lineheight * 22 + 8)
+						ctx.lineTo(585, firstline + lineheight * 22 + 8)
 						ctx.stroke()
 
-						ctx.moveTo(165, firstline + lineheight * 23 + 5)
-						ctx.lineTo(408, firstline + lineheight * 23 + 5)
+						ctx.moveTo(165, firstline + lineheight * 23 + 8)
+						ctx.lineTo(408, firstline + lineheight * 23 + 8)
 						ctx.stroke()
 
 
@@ -531,127 +526,132 @@
 						ctx.setTextBaseline('middle')
 						ctx.fillText('合计金额(大写)', padding + table1 / 2, firstline + lineheight * 5 + lineheight / 2)
 
-                        ctx.setTextAlign('left')
+						ctx.setTextAlign('left')
 						ctx.setTextBaseline('middle')
 						ctx.fillText(this.proCapitalAmount, padding + table1 + 30, firstline + lineheight * 5 + lineheight / 2)
 
-						ctx.draw()
-
-						uni.canvasToTempFilePath({
-							canvasId: 'canvas',
-							fileType: 'jpg',
-							success: function(res) {
-								console.log(res.tempFilePath)
-								_this.previewUrl = res.tempFilePath;
-								_this.previewShow = true;
-							}
-						})
+						ctx.draw(true, () => {
+                            uni.canvasToTempFilePath({
+                            	canvasId: 'canvas',
+                            	fileType: 'jpg',
+                            	success: function(res) {
+                                    uni.hideLoading();
+                            		console.log(res.tempFilePath)
+                            		_this.previewUrl = res.tempFilePath;
+                            		_this.previewShow = true;
+                            	},
+                                fail: function (res) {
+                                    console.log(res);
+                                }
+                            })
+                        })
 					},
 					fail: () => {}
 				});
 			},
-            addDemand() {
-                this.drawerTitle = '添加需方信息';
-                this.drawerDemandVisible = true;
-            	this.rightDrawerVisible = true;
-            },
-            addDemandChange(e) {
-                this.aDemand = e.detail.value;
-            },
-            addDemandTelChange(e) {
-                this.aDemandTel = e.detail.value;
-            },
-            addDemandLocationChange(e) {
-                this.aDemandLocation = e.detail.value;
-            },
-            confirmDemand() {
-                uni.showLoading();
-                uni.request({
-                	url: this.$requestUrl+'add_demand',
-                	method: 'POST',
-                    header: {
-                    	'content-type': 'application/x-www-form-urlencoded'
-                    },
-                	data: {
-                        name: this.aDemand,
-                        tel: this.aDemandTel,
-                        location: this.aDemandLocation
-                    },
-                	success: res => {
-                        this.demandList = res.data.data;
-                        uni.showToast({
-                        	title: '添加成功',
-                        	mask: false,
-                        	duration: 1500
-                        });
-                    },
-                	fail: () => {
-                        uni.showToast({
-                        	title: '请求出错，稍后重试',
-                        	mask: false,
-                        	duration: 1500
-                        });
-                    },
-                	complete: () => {
-                        this.drawerDemandVisible = false;
-                        this.rightDrawerVisible = false;
-                        uni.hideLoading();
-                    }
-                });
-            },
-            cancleDemand() {
-                this.drawerDemandVisible = false;
-                this.rightDrawerVisible = false;
-            },
-            addStandard() {
-                this.drawerTitle = '添加规格';
-                this.drawerStandardVisible = true;
-                this.rightDrawerVisible = true;
-            },
-            addStandardChange(e) {
-            	this.aStandard = e.detail.value;
-            },
-            confirmStandard() {
-                uni.showLoading();
-                uni.request({
-                	url: this.$requestUrl+'add_standard',
-                	method: 'POST',
-                	header: {
-                		'content-type': 'application/x-www-form-urlencoded'
-                	},
-                	data: {
-                		standard_name: this.aStandard,
-                	},
-                	success: res => {
-                		this.standardList = res.data.data;
-                		uni.showToast({
-                			title: '添加成功',
-                			mask: false,
-                			duration: 1500
-                		});
-                	},
-                	fail: () => {
-                		uni.showToast({
-                			title: '请求出错，稍后重试',
-                			mask: false,
-                			duration: 1500
-                		});
-                	},
-                	complete: () => {
-                        this.drawerStandardVisible = false;
-                		this.rightDrawerVisible = false;
-                		uni.hideLoading();
-                	}
-                });
-            },
-            cancleStandard() {
-            	this.drawerStandardVisible = false;
-            	this.rightDrawerVisible = false;
-            },
+			addDemand() {
+				this.drawerTitle = '添加需方信息';
+				this.drawerDemandVisible = true;
+				this.rightDrawerVisible = true;
+			},
+			addDemandChange(e) {
+				this.aDemand = e.detail.value;
+			},
+			addDemandTelChange(e) {
+				this.aDemandTel = e.detail.value;
+			},
+			addDemandLocationChange(e) {
+				this.aDemandLocation = e.detail.value;
+			},
+			confirmDemand() {
+				uni.showLoading();
+				uni.request({
+					url: this.$requestUrl + 'add_demand',
+					method: 'POST',
+					header: {
+						'content-type': 'application/x-www-form-urlencoded'
+					},
+					data: {
+						name: this.aDemand,
+						tel: this.aDemandTel,
+						location: this.aDemandLocation
+					},
+					success: res => {
+						this.demandList = res.data.data;
+						uni.showToast({
+							title: '添加成功',
+							mask: false,
+							duration: 1500
+						});
+					},
+					fail: () => {
+						uni.showToast({
+							title: '请求出错，稍后重试',
+							mask: false,
+							duration: 1500
+						});
+					},
+					complete: () => {
+						this.drawerDemandVisible = false;
+						this.rightDrawerVisible = false;
+						uni.hideLoading();
+					}
+				});
+			},
+			cancleDemand() {
+				this.drawerDemandVisible = false;
+				this.rightDrawerVisible = false;
+			},
+			addStandard() {
+				this.drawerTitle = '添加规格';
+				this.drawerStandardVisible = true;
+				this.rightDrawerVisible = true;
+			},
+			addStandardChange(e) {
+				this.aStandard = e.detail.value;
+			},
+			confirmStandard() {
+				uni.showLoading();
+				uni.request({
+					url: this.$requestUrl + 'add_standard',
+					method: 'POST',
+					header: {
+						'content-type': 'application/x-www-form-urlencoded'
+					},
+					data: {
+						standard_name: this.aStandard,
+					},
+					success: res => {
+						this.standardList = res.data.data;
+						uni.showToast({
+							title: '添加成功',
+							mask: false,
+							duration: 1500
+						});
+					},
+					fail: () => {
+						uni.showToast({
+							title: '请求出错，稍后重试',
+							mask: false,
+							duration: 1500
+						});
+					},
+					complete: () => {
+						this.drawerStandardVisible = false;
+						this.rightDrawerVisible = false;
+						uni.hideLoading();
+					}
+				});
+			},
+			cancleStandard() {
+				this.drawerStandardVisible = false;
+				this.rightDrawerVisible = false;
+			},
 			saveImg() {
 				let _this = this;
 				uni.saveImageToPhotosAlbum({
 					filePath: _this.previewUrl,
+					quality: 1,
 					success: function() {
 						_this.previewShow = false;
 						console.log('save success');
@@ -663,9 +663,9 @@
 					}
 				});
 			},
-            cancleImg() {
-                this.previewShow = false;
-            },
+			cancleImg() {
+				this.previewShow = false;
+			},
 			demandChange(e) {
 				this.demand = this.demandList[e.detail.value];
 				uni.request({
@@ -710,30 +710,30 @@
 				let dateArr = date.split('-');
 				this.sDate = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
 			},
-            contractExpSChange(e) {
-                let date = e.detail.value;
-                let dateArr = date.split('-');
-                this.proContractExpS = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
-                this.proContractEMin = date;
-            },
-            contractExpEChange(e) {
-                let date = e.detail.value;
-                let dateArr = date.split('-');
-                this.proContractExpE = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
-                this.proContractSMax = date;
-            },
-            priceExpSChange(e) {
-                let date = e.detail.value;
-                let dateArr = date.split('-');
-            	this.proPriceExpS = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
-            	this.proPriceExpEMin = date;
-            },
-            priceExpEChange(e) {
-                let date = e.detail.value;
-                let dateArr = date.split('-');
-            	this.proPriceExpE = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
-            	this.proPriceExpSMax = date;
-            }
+			contractExpSChange(e) {
+				let date = e.detail.value;
+				let dateArr = date.split('-');
+				this.proContractExpS = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
+				this.proContractEMin = date;
+			},
+			contractExpEChange(e) {
+				let date = e.detail.value;
+				let dateArr = date.split('-');
+				this.proContractExpE = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
+				this.proContractSMax = date;
+			},
+			priceExpSChange(e) {
+				let date = e.detail.value;
+				let dateArr = date.split('-');
+				this.proPriceExpS = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
+				this.proPriceExpEMin = date;
+			},
+			priceExpEChange(e) {
+				let date = e.detail.value;
+				let dateArr = date.split('-');
+				this.proPriceExpE = parseInt(dateArr[0]) + '年' + parseInt(dateArr[1]) + '月' + parseInt(dateArr[2]) + '日';
+				this.proPriceExpSMax = date;
+			}
 		}
 	}
 </script>
@@ -798,32 +798,37 @@
 		height: auto;
 	}
 
-	.btn-save{
+	.btn-save {
 		margin-top: 30upx;
-        margin-right: 20upx;
+		margin-right: 20upx;
 	}
-    .btn-create{
-        color: #FFF;
-        background-color: #0C5182;
-        border-radius: 0;
-    }
-    
-    .drawer-content{
-        padding: 20px;
-    }
-    .drawer-content .title{
-        margin-bottom: 30upx;
-    }
-    .drawer-content input{
-        border-bottom: 1px solid #0C5182;
-        margin-bottom: 5upx;
-    }
-    .btn-group{
-        display: flex;
-        margin-top: 30upx;
-    }
-    .btn-group button{
-        margin-left: 0;
-        margin-right: 30upx;
-    }
+
+	.btn-create {
+		color: #FFF;
+		background-color: #0C5182;
+		border-radius: 0;
+	}
+
+	.drawer-content {
+		padding: 20px;
+	}
+
+	.drawer-content .title {
+		margin-bottom: 30upx;
+	}
+
+	.drawer-content input {
+		border-bottom: 1px solid #0C5182;
+		margin-bottom: 5upx;
+	}
+
+	.btn-group {
+		display: flex;
+		margin-top: 30upx;
+	}
+
+	.btn-group button {
+		margin-left: 0;
+		margin-right: 30upx;
+	}
 </style>
